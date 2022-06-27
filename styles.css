@@ -1,0 +1,104 @@
+body{
+    /*overflow: hidden;*/
+    background-color: black;
+    /*padding: 20px;*/
+    font-family: "Times New Roman", serif;
+    /*margin: auto;
+    opacity: .65;
+    max-width: 1000px;
+    min-height: 100%;*/
+}
+.wrapper {
+    overflow: hidden;
+ }
+
+.sliding-background {
+    background: url("files/bgimage.svg") repeat-x;
+    background-position-y: relative;
+    height: 961px;
+    width: 6000px;
+    animation: slide 60s linear infinite;
+ }
+@keyframes slide {
+    0%{
+        transform: translate3d(-2000px, 0, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+}
+#content{
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 1;
+}
+#starthead{
+    opacity: .99;
+}
+.main {
+    /*text-shadow: 2px 2px 5px grey;*/
+    color: blue;
+    font-size: 50px;
+}
+.main::after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: 1.3em;
+    background-image: linear-gradient(0deg, blue, transparent 95%);
+    -webkit-background-clip: text;
+    color:transparent;
+    opacity: 0.7;
+}
+/*html{
+    background: url("oompa.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+#no{
+    font-weight: bold;
+    opacity: .99;
+}
+.tooltip {
+position: relative;
+}
+
+.dot {
+display: block;
+margin: 15px;
+width: 35px;
+height:35px;
+border-radius: 50%;
+background-color: orange;
+}
+
+.dotcontent {
+position: absolute;
+top: 0px;
+left: 75px;
+opacity: 0;
+transition: opacity .5s ease-in;
+}
+
+.dot:hover + .dotcontent {
+opacity: 1;
+}
+
+.specificLocation {
+margin-left: 100px;
+}
+#stratheadwrap{
+  padding: 20px;
+  background-color: white;
+  opacity: 75%;
+  width: 550px;
+}
+#starthead{
+  opacity: 100%;
+}
